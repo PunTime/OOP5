@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace OOP5
+{
+    partial class Form1
+    {
+        private System.Windows.Forms.TextBox txtNumber1;
+        private System.Windows.Forms.TextBox txtNumber2;
+        private System.Windows.Forms.ComboBox cmbOperation;
+        private System.Windows.Forms.ComboBox cmbType;
+        private System.Windows.Forms.Button btnCalculate;
+        private System.Windows.Forms.Label lblResult;
+
+        private void InitializeComponent()
+        {
+            this.txtNumber1 = new System.Windows.Forms.TextBox();
+            this.txtNumber2 = new System.Windows.Forms.TextBox();
+            this.cmbOperation = new System.Windows.Forms.ComboBox();
+            this.cmbType = new System.Windows.Forms.ComboBox();
+            this.btnCalculate = new System.Windows.Forms.Button();
+            this.lblResult = new System.Windows.Forms.Label();
+            this.SuspendLayout();
+
+            // ComboBox Type
+            this.cmbType.Items.AddRange(new object[] {"Fraction","Complex"});
+            this.cmbType.SelectedIndex = 0;
+            this.cmbType.Location = new System.Drawing.Point(20, 20);
+
+            // TextBoxes
+            this.txtNumber1.Location = new System.Drawing.Point(20, 60);
+            this.txtNumber2.Location = new System.Drawing.Point(20, 100);
+
+            // ComboBox Operation
+            this.cmbOperation.Items.AddRange(new object[] {"Add","Subtract","Multiply","Divide"});
+            this.cmbOperation.SelectedIndex = 0;
+            this.cmbOperation.Location = new System.Drawing.Point(20, 140);
+
+            // Button
+            this.btnCalculate.Text = "Calculate";
+            this.btnCalculate.Location = new System.Drawing.Point(20, 180);
+            this.btnCalculate.Click += new System.EventHandler(this.btnCalculate_Click);
+
+            // Label
+            this.lblResult.Location = new System.Drawing.Point(20, 220);
+            this.lblResult.AutoSize = true;
+
+            // Form
+            this.ClientSize = new System.Drawing.Size(300, 300);
+            this.Controls.Add(this.txtNumber1);
+            this.Controls.Add(this.txtNumber2);
+            this.Controls.Add(this.cmbOperation);
+            this.Controls.Add(this.cmbType);
+            this.Controls.Add(this.btnCalculate);
+            this.Controls.Add(this.lblResult);
+            this.Text = "My Numbers GUI";
+            this.ResumeLayout(false);
+            this.PerformLayout();
+        }
+    }
+}
